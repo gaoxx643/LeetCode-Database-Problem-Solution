@@ -35,7 +35,7 @@ SELECT
 CREATE FUNCTION getNthHighestSalary(N INT) RETURNS INT
 BEGIN
   RETURN (
-      # Write your MySQL query statement below.
+      # Write MySQL query statement below.
 	  IFNULL(
 	  (SELECT DISTINCT Salary
 	  FROM Employee
@@ -49,7 +49,7 @@ CREATE FUNCTION getNthHighestSalary(N INT) RETURNS INT
 BEGIN
   SET N = N - 1;
   RETURN (
-      # Write your MySQL query statement below.
+      # Write MySQL query statement below.
 	  SELECT DISTINCT Salary
 	  FROM Employee 
 	  GROUP BY Salary
@@ -59,7 +59,7 @@ END
 CREATE FUNCTION getNthHighestSalary(N INT) RETURNS INT
 BEGIN
   RETURN (
-      # Write your MySQL query statement below.
+      # Write MySQL query statement below.
 	  SELECT MAX(Salary)
 	  FROM Employee e1
 	  WHERE N - 1 = (SELECT COUNT(DISTINCT(e2.Salary)
